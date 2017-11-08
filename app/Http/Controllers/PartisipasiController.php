@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\DRJalanKD;
+use App\Kelurahan\Partisipasi;
 
-class ruasjalanController extends Controller
+class PartisipasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,6 @@ class ruasjalanController extends Controller
     public function index()
     {
         return view('home');
-        
     }
 
     /**
@@ -37,13 +36,15 @@ class ruasjalanController extends Controller
      */
     public function store(Request $request)
     {
-        $data =[
-            'namajalan' => $request['namajalan'],
-            'pangkaljalan' => $request['pangkaljalan'],
-            // 'badanjalan' => $request['badanjalan']
+        $data=
+        [
+            'namakegiatan' => $request['namakegiatan'],
+            'waktukegiatan' => $request['waktukegiatan'], 
+            'alamatkegiatan' => $request['alamatkegiatan'], 
+            'keterangan' => $request['keterangan'],
         ];
 
-        return DRJalanKD::create($data);
+        return Partisipasi::create($data);
     }
 
     /**
@@ -65,8 +66,8 @@ class ruasjalanController extends Controller
      */
     public function edit($id)
     {
-        $ruasjalan = DRJalanKD::find($id);
-        return $ruasjalan;
+        $partisipasi = Partisipasi::find($id);
+        return $partisipasi;
     }
 
     /**
@@ -78,13 +79,14 @@ class ruasjalanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ruasjalan = DRJalanKD::find($id);
-        $ruasjalan->namajalan = $request['namajalan'];
-        $ruasjalan->pangkaljalan = $request['pangkaljalan'];
-        // $balita->umur = $request['umur'];
-        $ruasjalan->update();
+        $partisipasi = Partisipasi::find($id);
+        $partisipasi->namakegiatan = $request['namakegiatan'];
+        $partisipasi->waktukegiatan = $request['waktukegiatan'];
+        $partisipasi->alamatkegiatan = $request['alamatkegiatan'];
+        $partisipasi->keterangan = $request['keterangan'];
+        $partisipasi->update();
 
-        return $ruasjalan;
+        return $partisipasi;
     }
 
     /**
@@ -95,16 +97,16 @@ class ruasjalanController extends Controller
      */
     public function destroy($id)
     {
-        $ruasjalan = DRJalanKD::find($id);
-        $ruasjalan->destroy($id);
+        $partisipasi = Partisipasi::find($id);
+        $partisipasi->destroy($id);
     }
 
-    public function apiRuasJalan(){
-        $ruasjalan = DRJalanKD::all();
-        return DataTables::of($ruasjalan)
-        ->addColumn('action', function($ruasjalan){
-            return '<a onclick = "editRuasJalan('. $ruasjalan->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteRuasJalan('. $ruasjalan->id .')" class="btn btn-danger"></i>Delete</a>';
+    public function apiPartisipasi(){
+        $partisipasi = Partisipasi::all();
+        return DataTables::of($partisipasi)
+        ->addColumn('action', function($partisipasi){
+            return '<a onclick = "editpartisipasi('. $partisipasi->id .')" class="btn btn-primary"></i>Edit</a> ' .
+            ' <a onclick = "deletepartisipasi('. $partisipasi->id .')" class="btn btn-danger"></i>Delete</a>';
         })->make(true);
     }
 }

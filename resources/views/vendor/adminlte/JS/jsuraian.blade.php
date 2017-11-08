@@ -1,34 +1,38 @@
 <script type="text/javascript">
 			
-			var ruasjalan = $('#ruasjalan-table').DataTable({
+			var uraian = $('#uraian-table').DataTable({
 		                        processing: true,
 		                        serverSide: true,
-		                        ajax: "{{ route('api/ruasjalan') }}",
+		                        ajax: "{{ route('api/uraian') }}",
 		                        columns: [
 		                            {data: 'id', name:'id'},
-		                            {data: 'namajalan', name:'namajalan'},
-		                            {data: 'pangkaljalan', name:'pangkaljalan'},
-		                            // {data: 'ujungjalan', name:'ujungjalan'},
+		                            {data: 'nama', name:'nama'},
+		                            {data: 'instansi', name:'instansi'},
+		                            {data: 'alamat', name:'alamat'},
+		                            {data: 'nohp', name:'nohp'},
+		                            {data: 'satuan', name:'satuan'},
+		                            {data: 'jenisdonasi', name:'jenisdonasi'},
+		                            {data: 'perkiraannilai', name:'perkiraannilai'},
 		                            {data: 'action', name:'action', orderable: false, searchable:false},
 		                        ]
 		                    });
-		function addRuasJalan(){
-		            save_method = "add4";
+		function adduraian(){
+		            save_method = "add7";
 		            $('input[name=_method]').val('POST');
-		            $('#ruasjalan-form').modal('show');
-		            $('#ruasjalan-form form')[0].reset();
-		            $('#modal-title').text('Add Ruas Jalan');
+		            $('#uraian-form').modal('show');
+		            $('#uraian-form form')[0].reset();
+		            $('#modal-title').text('Add Uraian Pribadi');
 		        }
-		function deleteRuasJalan(id){
+		function deleteuraian(id){
 		          var popup = confirm('Anda yakin ?');
 		          var csrf_token = $('meta[name="csrf-token"]').attr('content');
 		          if(popup == true){
 		            $.ajax({
-		              url: "{{ url('ruasjalan') }}" + '/' + id,
+		              url: "{{ url('uraian') }}" + '/' + id,
 		              type: "POST",
 		              data: {'_method' : 'DELETE', '_token':csrf_token},
 		              success: function(data){
-		                ruasjalan.ajax.reload();
+		                uraian.ajax.reload();
 		                console.log(data);
 		              },
 
@@ -40,22 +44,26 @@
 		        }
 
 
-		function editRuasJalan(id){
+		function edituraian(id){
 				            save_method = 'edit';
 				            $('input[name=_method]').val('PATCH');
-				            $('#ruasjalan-form form')[0].reset();
+				            $('#uraian-form form')[0].reset();
 				            $.ajax({
-				                url: "{{ url('ruasjalan') }}" + '/' + id + "/edit",
+				                url: "{{ url('uraian') }}" + '/' + id + "/edit",
 				                type: "GET",
 				                dataType: "JSON",
 				                success: function(data){
-				                    $('#ruasjalan-form').modal('show');
-				                    $('.modal-title').text('Edit Ruas Jalan');
+				                    $('#uraian-form').modal('show');
+				                    $('.modal-title').text('Edit Nama uraian Jenazah');
 
 				                    $('#id').val(data.id);
-				                    $('#nokk').val(data.nokk);
-				                    $('#namaibuhamil').val(data.namaibuhamil);
-				                    // $('#umur').val(data.umur);
+				                    $('#nama').val(data.nama);
+				                    $('#instansi').val(data.instansi);
+				                    $('#alamat').val(data.alamat);
+				                    $('#nohp').val(data.nohp);
+				                    $('#satuan').val(data.satuan);
+				                    $('#jenisdonasi').val(data.jenisdonasi);
+				                    $('#perkiraannilai').val(data.perkiraannilai);
 				                },
 
 				                error : function(){
@@ -66,19 +74,19 @@
 
 
 		$(function(){
-		            $('#ruasjalan-form form').validator().on('submit', function (e) {
+		            $('#uraian-form form').validator().on('submit', function (e) {
 		                if (!e.isDefaultPrevented()){
 		                    var id = $('#id').val();
-		                    if (save_method == 'add4') url ="{{ url('ruasjalan') }}";
+		                    if (save_method == 'add7') url ="{{ url('uraian') }}";
 		                    else
-		                        url = "{{ url('ruasjalan') . '/' }}" + id;
+		                        url = "{{ url('uraian') . '/' }}" + id;
 		                    
 		                    $.ajax({
 		                        url : url,
 		                        type : "POST",
-		                        data : $('#ruasjalan-form form').serialize(),
+		                        data : $('#uraian-form form').serialize(),
 		                        success : function($data){
-		                            $('#ruasjalan-form').modal('hide');
+		                            $('#uraian-form').modal('hide');
 		                        },
 		                        error : function(){
 		                            alert('Opps! Error!');

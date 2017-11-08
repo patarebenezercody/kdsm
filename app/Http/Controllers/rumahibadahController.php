@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\DPRumahIbadah;
+use App\Kelurahan\Pengurus;
 
 class rumahibadahController extends Controller
 {
@@ -38,12 +38,21 @@ class rumahibadahController extends Controller
     public function store(Request $request)
     {
         $data =[
+            
+            'id' => $request['id'],
             'nama' => $request['nama'],
             'nik' => $request['nik'],
-            // 'jkelamin' => $request['jkelamin']
+            'jkelamin' => $request['jkelamin'],
+            'ttl' => $request['ttl'],
+            'alamat' => $request['alamat'],
+            'namatempatibadah' => $request['namatempatibadah'],
+            'alamattempatibadah' => $request['alamattempatibadah'],
+            'norekbanksumut' => $request['norekbanksumut'],
+            'kantorcbgbanksumut' => $request['kantorcbgbanksumut'],
+            'nohp' => $request['nohp'],
         ];
 
-        return DPRumahIbadah::create($data);
+        return Pengurus::create($data);
     }
 
     /**
@@ -65,7 +74,7 @@ class rumahibadahController extends Controller
      */
     public function edit($id)
     {
-        $pengurus = DPRumahIbadah::find($id);
+        $pengurus = Pengurus::find($id);
         return $pengurus;
     }
 
@@ -78,10 +87,18 @@ class rumahibadahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengurus = DPRumahIbadah::find($id);
-        $pengurus->namajalan = $request['namajalan'];
-        $pengurus->ujungjalan = $request['ujungjalan'];
-        // $balita->umur = $request['umur'];
+        $pengurus = Pengurus::find($id);
+        $pengurus->nama = $request['nama'];
+        $pengurus->nik = $request['nik'];
+        $pengurus->jkelamin = $request['jkelamin'];
+        $pengurus->ttl = $request['ttl'];
+        $pengurus->alamat = $request['alamat'];
+        $pengurus->namatempatibadah = $request['namatempatibadah'];
+        $pengurus->alamattempatibadah = $request['alamattempatibadah'];
+        $pengurus->norekbanksumut = $request['norekbanksumut'];
+        $pengurus->kantorcbgbanksumut = $request['kantorcbgbanksumut'];
+        $pengurus->nohp = $request['nohp'];
+
         $pengurus->update();
 
         return $pengurus;
@@ -95,12 +112,12 @@ class rumahibadahController extends Controller
      */
     public function destroy($id)
     {
-        $pengurus = DPRumahIbadah::find($id);
+        $pengurus = Pengurus::find($id);
         $pengurus->destroy($id);
     }
 
-    public function apiRumahIbadah(){
-        $pengurus = DPRumahIbadah::all();
+    public function apiPengurus(){
+        $pengurus = Pengurus::all();
         return DataTables::of($pengurus)
         ->addColumn('action', function($pengurus){
             return '<a onclick = "editPengurus('. $pengurus->id .')" class="btn btn-primary"></i>Edit</a> ' .

@@ -1,4 +1,4 @@
-<div class="modal" id="ibu-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="bilal-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<form method="POST" class="form-horizontal" data-toggle="validator">
@@ -12,66 +12,74 @@
 
 					<input type="hidden" id="id" name="id">
 					<div class="form-group">
-						<label for="nokk" class="col-md-3 control-label">NO KK</label>
+						<label for="namabilal" class="col-md-3 control-label">Nama Bilal Jenazah</label>
 						<div class="col-md-6">
-							<input type="text" id="nokk" name="nokk" class="form-control" required autofocus>
+							<input type="text" id="namabilal" name="namabilal" class="form-control" required autofocus>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="namaibuhamil" class="col-md-3 control-label">Nama Ibu Hamil</label>
+						<label for="nik" class="col-md-3 control-label">NIK</label>
 						<div class="col-md-6">
-							<input type="text" id="namaibuhamil" name="namaibuhamil" class="form-control" required>
+							<input type="text" id="nik" name="nik" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="umur" class="col-md-3 control-label">Umur</label>
+						<label for="jkelamin" class="col-md-3 control-label">Jenis Kelamin</label>
 						<div class="col-md-6">
-							<input type="text" id="umur" name="umur" class="form-control" required>
+							<input type="text" id="jkelamin" name="jkelamin" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="alamat" class="col-md-3 control-label">Alamat</label>
+						<label for="ttl" class="col-md-3 control-label">Tempat/Tgl Lahir</label>
 						<div class="col-md-6">
-							<input type="text" id="alamat" name="alamat" class="form-control" required>
+							<input type="text" id="ttl" name="ttl" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="namasuami" class="col-md-3 control-label">Nama Suami</label>
+						<label for="alamatbilal" class="col-md-3 control-label">Alamat Bilal Jenazah</label>
 						<div class="col-md-6">
-							<input type="text" id="namasuami" name="namasuami" class="form-control">
+							<input type="text" id="alamatbilal" name="alamatbilal" class="form-control">
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					
 					<div class="form-group">
-						<label for="jlhanak" class="col-md-3 control-label">Jumlah Anak</label>
+						<label for="lokasitugas" class="col-md-3 control-label">Lokasi Tugas</label>
 						<div class="col-md-6">
-							<input type="text" id="jlhanak" name="jlhanak" class="form-control" required>
+							<input type="text" id="lokasitugas" name="lokasitugas" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="pekerjaan" class="col-md-3 control-label">Pekerjaan</label>
+						<label for="norekbanksumut" class="col-md-3 control-label">Nomor Rekening Bank Sumut</label>
 						<div class="col-md-6">
-							<input type="text" id="pekerjaan" name="pekerjaan" class="form-control" required>
+							<input type="text" id="norekbanksumut" name="norekbanksumut" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="keterangan" class="col-md-3 control-label">Keterangan</label>
+						<label for="kantorcbgbanksumut" class="col-md-3 control-label">Kantor Cabang Bank SUMUT</label>
 						<div class="col-md-6">
-							<input type="text" id="keterangan" name="keterangan" class="form-control" required>
+							<input type="text" id="kantorcbgbanksumut" name="kantorcbgbanksumut" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="nohp" class="col-md-3 control-label">No HP</label>
+						<div class="col-md-6">
+							<input type="text" id="nohp" name="nohp" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>

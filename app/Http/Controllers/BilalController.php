@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\Kelurahan\DIHamil;
-
-class ibuhamilController extends Controller
+use App\Kelurahan\Bilal;
+class BilalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class ibuhamilController extends Controller
     public function index()
     {
         return view('home');
-    
+        
     }
 
     /**
@@ -38,19 +36,19 @@ class ibuhamilController extends Controller
     public function store(Request $request)
     {
         $data =[
-
             'id' => $request['id'],
-            'nokk' => $request['nokk'],
-            'namaibuhamil' => $request['namaibuhamil'],
-            'umur' => $request['umur'],
-            'alamat' => $request['alamat'],
-            'namasuami' => $request['namasuami'],
-            'jlhanak' => $request['jlhanak'],
-            'pekerjaan' => $request['pekerjaan'],
-            'keterangan' => $request['keterangan'],
+            'namabilal' => $request['namabilal'],
+            'nik' => $request['nik'],
+            'jkelamin' => $request['jkelamin'],
+            'ttl' => $request['ttl'],
+            'alamatbilal' => $request['alamatbilal'],
+            'lokasitugas' => $request['lokasitugas'],
+            'norekbanksumut' => $request['norekbanksumut'],
+            'kantorcbgbanksumut' => $request['kantorcbgbanksumut'],
+            'nohp' => $request['nohp'],
         ];
 
-        return DIHamil::create($data);
+        return Bilal::create($data);
     }
 
     /**
@@ -72,8 +70,8 @@ class ibuhamilController extends Controller
      */
     public function edit($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        return $ibuhamil;
+        $b = Bilal::find($id);
+        return $b;
     }
 
     /**
@@ -85,18 +83,19 @@ class ibuhamilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->nokk = $request['nokk'];
-        $ibuhamil->namaibuhamil = $request['namaibuhamil'];
-        $ibuhamil->umur = $request['umur'];
-        $ibuhamil->alamat = $request['alamat'];
-        $ibuhamil->namasuami = $request['namasuami'];
-        $ibuhamil->jlhanak = $request['jlhanak'];
-        $ibuhamil->pekerjaan = $request['pekerjaan'];
-        $ibuhamil->keterangan = $request['keterangan'];
-        $ibuhamil->update();
+        $b = Bilal::find($id);
+        $b->namabilal = $request['namabilal'];
+        $b->nik = $request['nik'];
+        $b->jkelamin = $request['jkelamin'];
+        $b->ttl = $request['ttl'];
+        $b->alamatbilal = $request['alamatbilal'];
+        $b->lokasitugas = $request['lokasitugas'];
+        $b->norekbanksumut = $request['norekbanksumut'];
+        $b->kantorcbgbanksumut = $request['kantorcbgbanksumut'];
+        $b->nohp = $request['nohp'];
+        $b->update();
 
-        return $ibuhamil;
+        return $b;
     }
 
     /**
@@ -107,16 +106,16 @@ class ibuhamilController extends Controller
      */
     public function destroy($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->destroy($id);
+        $b = Bilal::find($id);
+        $b->destroy($id);
     }
 
-    public function apiIbuHamil(){
-        $ibuhamil = DIHamil::all();
-        return DataTables::of($ibuhamil)
-        ->addColumn('action', function($ibuhamil){
-            return '<a onclick = "editIbuHamil('. $ibuhamil->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteIbuHamil('. $ibuhamil->id .')" class="btn btn-danger"></i>Delete</a>';
+    public function apiBilal(){
+        $b = Bilal::all();
+        return DataTables::of($b)
+        ->addColumn('action', function($b){
+            return '<a onclick = "editbilal('. $b->id .')" class="btn btn-primary"></i>Edit</a> ' .
+            ' <a onclick = "deletebilal('. $b->id .')" class="btn btn-danger"></i>Delete</a>';
         })->make(true);
     }
 }

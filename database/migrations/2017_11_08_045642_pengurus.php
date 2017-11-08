@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DPRumahIbadah extends Migration
+class Pengurus extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,7 @@ class DPRumahIbadah extends Migration
      */
     public function up()
     {
-        Schema::create('prumahibadahs', function (Blueprint $table) {
+        Schema::create('pengurustables', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->string('nik');
@@ -44,6 +44,6 @@ class DPRumahIbadah extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prumahibadahs');
+        Schema::dropIfExists('pengurustables');
     }
 }

@@ -1,4 +1,3 @@
-	
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-12">
@@ -8,10 +7,10 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">
 						
-							Daftar Balita 0-59 Bulan Yang Ada Di Wilayah Kerja PUSKESMAS Padang Bulan -<br> Kelurahan Darat Kecamatan Medan Baru Tahun 2017<br>	
+							Daftar Nama BILAL JENAZAH dan PENGGALI KUBUR penerima bantuan pemerintah Kota MEDAN 
 							
 						</h3>
-						<a onclick="addBalita()" class="btn btn-primary pull-right" style="margin-right: 50px">Add</a>
+						<a onclick="addbilal()" class="btn btn-primary pull-right" style="margin-right: 50px">Add</a>
 						<div class="box-tools pull-right">
 
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -22,17 +21,21 @@
 					</div>
 
 					<div class="box-body">
-					<table id="balita-table" class="table table-striped">
+					<table id="bilal-table" class="table table-striped">
                 		<thead>
 		                  <tr>
 		                    <th>Id</th>
-		                    <th>Nama Anak</th>
-		                    <th>Tempat/Tgl Lahir</th>
-		                    <th>Umur</th>
+		                    <th>Nama Bilal Jenazah</th>
+		                    <th>NIK</th>
 		                    <th>Jenis Kelamin</th>
-		                    <th>Nama Orang Tua</th>
-		                    <th>No KK</th>
+		                    <th>TEMPAT TANGGAL LAHIR</th>
+		                    <th>ALAMAT BILAL JENAZAH</th>
+		                    <th>LOKASI TUGAS</th>
+		                    <th>NOMOR REKENING BANK SUMUT</th>
+		                    <th>KANTOR CABANG BANK SUMUT</th>
+		                    <th>NO HP</th>
 		                    <th>Action</th>
+		                    
 		                  </tr>
 		                </thead>
 			        </table>
@@ -40,8 +43,7 @@
 				</div>
 			</div>
 		</div>
-                @include('formAdmin.formbalita')
+                @include('formAdmin.formbilaljenazah')
 
-	
 	</div>
 	

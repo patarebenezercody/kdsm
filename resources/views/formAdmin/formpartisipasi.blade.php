@@ -1,4 +1,4 @@
-<div class="modal" id="ruasjalan-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="partisipasi-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<form method="POST" class="form-horizontal" data-toggle="validator">
@@ -12,29 +12,37 @@
 
 					<input type="hidden" id="id" name="id">
 					<div class="form-group">
-						<label for="namajalan" class="col-md-3 control-label">Nama Jalan</label>
+						<label for="namakegiatan" class="col-md-3 control-label">Nama Kegiatan</label>
 						<div class="col-md-6">
-							<input type="text" id="namajalan" name="namajalan" class="form-control"  required autofocus>
+							<input type="text" id="namakegiatan" name="namakegiatan" class="form-control"  required autofocus>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="pangkaljalan" class="col-md-3 control-label">Pangkal Jalan</label>
+						<label for="waktukegiatan" class="col-md-3 control-label">Waktu Kegiatan</label>
 						<div class="col-md-6">
-							<input type="pangkaljalan" id="pangkaljalan" name="pangkaljalan" class="form-control" required>
+							<input type="text" id="waktukegiatan" name="waktukegiatan" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
-					<!-- <div class="form-group">
-						<label for="ujungjalan" class="col-md-3 control-label">Ujung Jalan</label>
+					<div class="form-group">
+						<label for="alamatkegiatan" class="col-md-3 control-label">Alamat Kegiatan</label>
 						<div class="col-md-6">
-							<input type="ujungjalan" id="ujungjalan" name="ujungjalan" class="form-control" required>
+							<input type="text" id="alamatkegiatan" name="alamatkegiatan" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
-					</div> -->
-				</div>
+					</div>
+
+					<div class="form-group">
+						<label for="keterangan" class="col-md-3 control-label">Keterangan</label>
+						<div class="col-md-6">
+							<input type="text" id="keterangan" name="keterangan" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
 
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary btn-save">Simpan</button>

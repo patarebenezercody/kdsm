@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\Kelurahan\DIHamil;
+use App\Uraian;
 
-class ibuhamilController extends Controller
+class UraianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class ibuhamilController extends Controller
     public function index()
     {
         return view('home');
-    
+        
     }
 
     /**
@@ -38,19 +38,17 @@ class ibuhamilController extends Controller
     public function store(Request $request)
     {
         $data =[
-
             'id' => $request['id'],
-            'nokk' => $request['nokk'],
-            'namaibuhamil' => $request['namaibuhamil'],
-            'umur' => $request['umur'],
+            'nama' => $request['nama'],
+            'instansi' => $request['instansi'],
             'alamat' => $request['alamat'],
-            'namasuami' => $request['namasuami'],
-            'jlhanak' => $request['jlhanak'],
-            'pekerjaan' => $request['pekerjaan'],
-            'keterangan' => $request['keterangan'],
+            'nohp' => $request['nohp'],
+            'satuan' => $request['satuan'],
+            'jenisdonasi' => $request['jenisdonasi'],
+            'perkiraannilai' => $request['perkiraannilai'],
         ];
 
-        return DIHamil::create($data);
+        return Uraian::create($data);
     }
 
     /**
@@ -72,8 +70,8 @@ class ibuhamilController extends Controller
      */
     public function edit($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        return $ibuhamil;
+        $u = Uraian::find($id);
+        return $u;
     }
 
     /**
@@ -85,18 +83,17 @@ class ibuhamilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->nokk = $request['nokk'];
-        $ibuhamil->namaibuhamil = $request['namaibuhamil'];
-        $ibuhamil->umur = $request['umur'];
-        $ibuhamil->alamat = $request['alamat'];
-        $ibuhamil->namasuami = $request['namasuami'];
-        $ibuhamil->jlhanak = $request['jlhanak'];
-        $ibuhamil->pekerjaan = $request['pekerjaan'];
-        $ibuhamil->keterangan = $request['keterangan'];
-        $ibuhamil->update();
+        $u = Uraian::find($id);
+        $u->nama = $request['nama'];
+        $u->instansi = $request['instansi'];
+        $u->alamat = $request['alamat'];
+        $u->nohp = $request['nohp'];
+        $u->satuan = $request['satuan'];
+        $u->jenisdonasi = $request['jenisdonasi'];
+        $u->perkiraannilai = $request['perkiraannilai'];
+        $u->update();
 
-        return $ibuhamil;
+        return $u;
     }
 
     /**
@@ -107,16 +104,16 @@ class ibuhamilController extends Controller
      */
     public function destroy($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->destroy($id);
+        $u = Uraian::find($id);
+        $u->destroy($id);
     }
 
-    public function apiIbuHamil(){
-        $ibuhamil = DIHamil::all();
-        return DataTables::of($ibuhamil)
-        ->addColumn('action', function($ibuhamil){
-            return '<a onclick = "editIbuHamil('. $ibuhamil->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteIbuHamil('. $ibuhamil->id .')" class="btn btn-danger"></i>Delete</a>';
+    public function apiUraian(){
+        $u = Uraian::all();
+        return DataTables::of($u)
+        ->addColumn('action', function($u){
+            return '<a onclick = "edituraian('. $u->id .')" class="btn btn-primary"></i>Edit</a> ' .
+            ' <a onclick = "deleteuraian('. $u->id .')" class="btn btn-danger"></i>Delete</a>';
         })->make(true);
     }
 }

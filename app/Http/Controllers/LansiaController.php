@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\Kelurahan\DIHamil;
+use App\Kelurahan\Lansia;
 
-class ibuhamilController extends Controller
+class LansiaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class ibuhamilController extends Controller
     public function index()
     {
         return view('home');
-    
+        
     }
 
     /**
@@ -37,20 +37,20 @@ class ibuhamilController extends Controller
      */
     public function store(Request $request)
     {
-        $data =[
-
+        $data =
+        [
             'id' => $request['id'],
             'nokk' => $request['nokk'],
-            'namaibuhamil' => $request['namaibuhamil'],
+            'namalansia' => $request['namalansia'],
+            'ttl' => $request['ttl'],
             'umur' => $request['umur'],
+            'status' => $request['status'],
             'alamat' => $request['alamat'],
-            'namasuami' => $request['namasuami'],
-            'jlhanak' => $request['jlhanak'],
             'pekerjaan' => $request['pekerjaan'],
             'keterangan' => $request['keterangan'],
         ];
 
-        return DIHamil::create($data);
+        return Lansia::create($data);
     }
 
     /**
@@ -72,8 +72,8 @@ class ibuhamilController extends Controller
      */
     public function edit($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        return $ibuhamil;
+        $lansia = Lansia::find($id);
+        return $lansia;
     }
 
     /**
@@ -85,18 +85,18 @@ class ibuhamilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->nokk = $request['nokk'];
-        $ibuhamil->namaibuhamil = $request['namaibuhamil'];
-        $ibuhamil->umur = $request['umur'];
-        $ibuhamil->alamat = $request['alamat'];
-        $ibuhamil->namasuami = $request['namasuami'];
-        $ibuhamil->jlhanak = $request['jlhanak'];
-        $ibuhamil->pekerjaan = $request['pekerjaan'];
-        $ibuhamil->keterangan = $request['keterangan'];
-        $ibuhamil->update();
+        $lansia = Lansia::find($id);
+        $lansia->nokk = $request['nokk'];
+        $lansia->namalansia = $request['namalansia'];
+        $lansia->ttl = $request['ttl'];
+        $lansia->umur = $request['umur'];
+        $lansia->status = $request['status'];
+        $lansia->alamat = $request['alamat'];
+        $lansia->pekerjaan = $request['pekerjaan'];
+        $lansia->keterangan = $request['keterangan'];
+        $lansia->update();
 
-        return $ibuhamil;
+        return $lansia;
     }
 
     /**
@@ -107,16 +107,16 @@ class ibuhamilController extends Controller
      */
     public function destroy($id)
     {
-        $ibuhamil = DIHamil::find($id);
-        $ibuhamil->destroy($id);
+        $lansia = Lansia::find($id);
+        $lansia->destroy($id);
     }
 
-    public function apiIbuHamil(){
-        $ibuhamil = DIHamil::all();
-        return DataTables::of($ibuhamil)
-        ->addColumn('action', function($ibuhamil){
-            return '<a onclick = "editIbuHamil('. $ibuhamil->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteIbuHamil('. $ibuhamil->id .')" class="btn btn-danger"></i>Delete</a>';
+    public function apiLansia(){
+        $lansia = Lansia::all();
+        return DataTables::of($lansia)
+        ->addColumn('action', function($lansia){
+            return '<a onclick = "editlansia('. $lansia->id .')" class="btn btn-primary"></i>Edit</a> ' .
+            ' <a onclick = "deletelansia('. $lansia->id .')" class="btn btn-danger"></i>Delete</a>';
         })->make(true);
     }
 }

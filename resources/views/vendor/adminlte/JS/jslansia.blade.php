@@ -1,39 +1,41 @@
 <script type="text/javascript">
-	var balita = $('#balita-table').DataTable({
+	var lansia = $('#lansia-table').DataTable({
                         processing: true,
                         serverSide: true,
-                        ajax: "{{ route('api/balita') }}",
+                        ajax: "{{ route('api/lansia') }}",
                         columns: [
                             {data: 'id', name:'id'},
-                            {data: 'namaanak', name:'namaanak'},
+                            {data: 'nokk', name:'nokk'},
+                            {data: 'namalansia', name:'namalansia'},
                             {data: 'ttl', name:'ttl'},
                             {data: 'umur', name:'umur'},
-                            {data: 'jkelamin', name:'jkelamin'},
-                            {data: 'namaorangtua', name:'namaorangtua'},
-                            {data: 'nokk', name:'nokk'},
+                            {data: 'status', name:'status'},
+                            {data: 'alamat', name:'alamat'},
+                            {data: 'pekerjaan', name:'pekerjaan'},
+                            {data: 'keterangan', name:'keterangan'},
                             {data: 'action', name:'action', orderable: false, searchable:false}
                         ]
                     });
 
 
-		function addBalita(){
-	            save_method = "add1";
+		function addlansia(){
+	            save_method = "add3";
 	            $('input[name=_method]').val('POST');
-	            $('#modal-form').modal('show');
-	            $('#modal-form form')[0].reset();
-	            $('#modal-title').text('Add Nama Balita');
+	            $('#lansia-form').modal('show');
+	            $('#lansia-form form')[0].reset();
+	            $('#modal-title').text('Add Nama Lansia');
 	        }
 
-       function deleteBalita(id){
+       function deletelansia(id){
           var popup = confirm('Anda yakin ?');
           var csrf_token = $('meta[name="csrf-token"]').attr('content');
           if(popup == true){
             $.ajax({
-              url: "{{ url('balita') }}" + '/' + id,
+              url: "{{ url('lansia') }}" + '/' + id,
               type: "POST",
               data: {'_method' : 'DELETE', '_token':csrf_token},
               success: function(data){
-                balita.ajax.reload();
+                lansia.ajax.reload();
                 console.log(data);
               },
 
@@ -44,25 +46,27 @@
           }
         }
 
-        function editBalita(id){
+        function editlansia(id){
             save_method = 'edit';
             $('input[name=_method]').val('PATCH');
-            $('#modal-form form')[0].reset();
+            $('#lansia-form form')[0].reset();
             $.ajax({
-                url: "{{ url('balita') }}" + '/' + id + "/edit",
+                url: "{{ url('lansia') }}" + '/' + id + "/edit",
                 type: "GET",
                 dataType: "JSON",
                 success: function(data){
-                    $('#modal-form').modal('show');
-                    $('.modal-title').text('Edit Balita');
+                    $('#lansia-form').modal('show');
+                    $('.modal-title').text('Edit Lansia');
 
                     $('#id').val(data.id);
-                    $('#namaanak').val(data.namaanak);
+                    $('#nokk').val(data.nokk);
+                    $('#namalansia').val(data.namalansia);
                     $('#ttl').val(data.ttl);
                     $('#umur').val(data.umur);
-                    $('#jkelamin').val(data.jkelamin);
-                    $('#namaorangtua').val(data.namaorangtua);
-                    $('#nokk').val(data.nokk);
+                    $('#status').val(data.status);
+                    $('#alamat').val(data.alamat);
+                    $('#pekerjaan').val(data.pekerjaan);
+                    $('#keterangan').val(data.keterangan);
                 },
 
                 error : function(){
@@ -72,19 +76,19 @@
         }
 
         $(function(){
-            $('#modal-form form').validator().on('submit', function (e) {
+            $('#lansia-form form').validator().on('submit', function (e) {
                 if (!e.isDefaultPrevented()){
                     var id = $('#id').val();
-                    if (save_method == 'add1') url ="{{ url('balita') }}";
+                    if (save_method == 'add3') url ="{{ url('lansia') }}";
                     else
-                        url = "{{ url('balita') . '/' }}" + id;
+                        url = "{{ url('lansia') . '/' }}" + id;
                     
                     $.ajax({
                         url : url,
                         type : "POST",
-                        data : $('#modal-form form').serialize(),
+                        data : $('#lansia-form form').serialize(),
                         success : function($data){
-                            $('#modal-form').modal('hide');
+                            $('#lansia-form').modal('hide');
                         },
                         error : function(){
                             alert('Opps! Error!');

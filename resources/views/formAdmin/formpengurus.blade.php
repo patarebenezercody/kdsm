@@ -27,13 +27,71 @@
 						</div>
 					</div>
 
-					<!-- <div class="form-group">
-						<label for="ujungjalan" class="col-md-3 control-label">Ujung Jalan</label>
+					<div class="form-group">
+						<label for="jkelamin" class="col-md-3 control-label">Jenis Kelamin</label>
 						<div class="col-md-6">
-							<input type="ujungjalan" id="ujungjalan" name="ujungjalan" class="form-control" required>
+							<input type="text" id="jkelamin" name="jkelamin" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
-					</div> -->
+					</div>
+
+					<div class="form-group">
+						<label for="ttl" class="col-md-3 control-label">Tempat/Tgl Lahir</label>
+						<div class="col-md-6">
+							<input type="text" id="ttl" name="ttl" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="alamat" class="col-md-3 control-label">Alamat</label>
+						<div class="col-md-6">
+							<input type="text" id="alamat" name="alamat" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="namatempatibadah" class="col-md-3 control-label">Nama Tempat Ibadah</label> 
+						<div class="col-md-6">
+							<input type="text" id="namatempatibadah" name="namatempatibadah" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="alamattempatibadah" class="col-md-3 control-label">Alamat Tempat Ibadah</label> 
+						<div class="col-md-6">
+							<input type="text" id="alamattempatibadah" name="alamattempatibadah" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="norekbanksumut" class="col-md-3 control-label">No Rek. Bank SUMUT</label>
+						<div class="col-md-6">
+							<input type="text" id="norekbanksumut" name="norekbanksumut" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="kantorcbgbanksumut" class="col-md-3 control-label">Kantor Cabang Bank Sumut</label>
+						<div class="col-md-6">
+							<input type="text" id="kantorcbgbanksumut" name="kantorcbgbanksumut" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="nohp" class="col-md-3 control-label">No HP</label>
+						<div class="col-md-6">
+							<input type="text" id="nohp" name="nohp" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+
 				</div>
 
 				<div class="modal-footer">

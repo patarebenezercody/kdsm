@@ -7,7 +7,7 @@
 				<div class="box">
 					<div class="box-header with-border">
 						<h3 class="box-title">
-							Dafar Pengurus Rumah Ibadah dan Imam Mesjid Penerima Bantuan Pemerintah Kota Medan Tahun 2017
+							Usulan Pengurus Rumah Ibadah dan Imam Mesjid Penerima Bantuan Pemerintah Kota Medan Tahun 2017
 						</h3>
 						<a onclick="addPengurus()" class="btn btn-primary pull-right" style="margin-right: 50px">Add</a>
 						<div class="box-tools pull-right">
@@ -23,10 +23,17 @@
                 		<thead>
 		                  <tr>
 		                    <th>Id</th>
-		                    
-		                    <th>Nama</th>
+		                    <th>NAMA NAZIR</th>
 		                    <th>NIK</th>
-		                    <!-- <th>Alamat</th> -->
+		                    <th>JENIS KELAMIN</th>
+		                    <th>TEMPAT LAHIR</th>
+		                    <th>TANGGAL LAHIR</th>
+		                    <th>ALAMAT NAZIR</th>
+		                    <th>NAMA MESJID</th>
+		                    <th>ALAMAT MESJID</th>
+		                    <th>NOMOR REKENING BANK SUMUT</th>
+		                    <th>KANTOR CABANG BANK SUMUT</th>
+		                    <th>NO HP</th>
 		                    <th>Action</th>
 		                  </tr>
 		                </thead>

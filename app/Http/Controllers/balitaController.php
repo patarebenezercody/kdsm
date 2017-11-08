@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\DBalitaPuskes;
+use App\Kelurahan\DBalitaPuskes;
 
 class balitaController extends Controller
 {
@@ -38,10 +38,13 @@ class balitaController extends Controller
     {
         $data=
         [
-
+            'id' => $request['id'],
             'namaanak' => $request['namaanak'],
             'ttl' => $request['ttl'], 
-            // 'umur' => $request['umur'] 
+            'umur' => $request['umur'], 
+            'jkelamin' => $request['jkelamin'], 
+            'namaorangtua' => $request['namaorangtua'], 
+            'nokk' => $request['nokk'], 
         ];
 
         return DBalitaPuskes::create($data);
@@ -82,7 +85,10 @@ class balitaController extends Controller
         $balita = DBalitaPuskes::find($id);
         $balita->namaanak = $request['namaanak'];
         $balita->ttl = $request['ttl'];
-        // $balita->umur = $request['umur'];
+        $balita->umur = $request['umur'];
+        $balita->jkelamin = $request['jkelamin'];
+        $balita->namaorangtua = $request['namaorangtua'];
+        $balita->nokk = $request['nokk'];
         $balita->update();
 
         return $balita;

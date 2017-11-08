@@ -60,9 +60,13 @@ desired effect
             <!-- Your Page Content Here -->
             @include('adminlte::layouts.admin.balita')
             @include('adminlte::layouts.admin.ibuhamil')
-
             @include('adminlte::layouts.admin.pengurus')
-            @include('adminlte::layouts.admin.ruasjalan')
+            @include('adminlte::layouts.admin.partisipasi')
+            @include('adminlte::layouts.admin.uraianpribadi')
+            @include('adminlte::layouts.admin.lansia')
+            @include('adminlte::layouts.admin.bilal')
+
+
             
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
@@ -91,10 +95,13 @@ desired effect
     <script src="{{ asset('assets/validator/validator.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/js/ie10-viewport-bug-workaround.js') }}"></script>
 
+    @include('adminlte::JS.jsbilal')
     @include('adminlte::JS.jsbalita')
     @include('adminlte::JS.jsibu')
+    @include('adminlte::JS.jslansia')
     @include('adminlte::JS.jspengurus')
-    @include('adminlte::JS.jsruasjalan')
+    @include('adminlte::JS.jspartisipasi')
+    @include('adminlte::JS.jsuraian')
 
 
 

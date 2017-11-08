@@ -22,9 +22,18 @@ Route::group(['middleware' => 'auth'], function () {
    Route::resource('ibuhamil', 'ibuhamilController');
    Route::get('api/ibuhamil', 'ibuhamilController@apiIbuHamil')->name('api/ibuhamil');
 
-   Route::resource('ruasjalan', 'ruasjalanController');
-   Route::get('api/ruasjalan', 'ruasjalanController@apiRuasJalan')->name('api/ruasjalan');
+   Route::resource('lansia', 'LansiaController');
+   Route::get('api/lansia', 'LansiaController@apiLansia')->name('api/lansia');
 
-   Route::resource('rumahibadah', 'rumahibadahController');
-   Route::get('api/rumahibadah', 'rumahibadahController@apiRumahIbadah')->name('api/rumahibadah');
+   Route::resource('pengurus', 'rumahibadahController');
+   Route::get('api/pengurus', 'rumahibadahController@apiPengurus')->name('api/pengurus');
+
+   Route::resource('partisipasi', 'PartisipasiController');
+   Route::get('api/partisipasi', 'PartisipasiController@apiPartisipasi')->name('api/partisipasi');
+
+   Route::resource('uraian', 'UraianController');
+   Route::get('api/uraian', 'UraianController@apiUraian')->name('api/uraian');
+
+   Route::resource('bilal', 'BilalController');
+   Route::get('api/bilal', 'BilalController@apiBilal')->name('api/bilal');
 });

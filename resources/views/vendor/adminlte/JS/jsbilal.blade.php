@@ -1,41 +1,40 @@
 <script type="text/javascript">
 			
-			var pengurus = $('#pengurus-table').DataTable({
+			var bilal = $('#bilal-table').DataTable({
 		                        processing: true,
 		                        serverSide: true,
-		                        ajax: "{{ route('api/pengurus') }}",
+		                        ajax: "{{ route('api/bilal') }}",
 		                        columns: [
 		                            {data: 'id', name:'id'},
-		                            {data: 'nama', name:'nama'},
+		                            {data: 'namabilal', name:'namabilal'},
 		                            {data: 'nik', name:'nik'},
 		                            {data: 'jkelamin', name:'jkelamin'},
 		                            {data: 'ttl', name:'ttl'},
-		                            {data: 'alamat', name:'alamat'},
-		                            {data: 'namatempatibadah', name:'namatempatibadah'},
-		                            {data: 'alamattempatibadah', name:'alamattempatibadah'},
+		                            {data: 'alamatbilal', name:'alamatbilal'},
+		                            {data: 'lokasitugas', name:'lokasitugas'},
 		                            {data: 'norekbanksumut', name:'norekbanksumut'},
 		                            {data: 'kantorcbgbanksumut', name:'kantorcbgbanksumut'},
 		                            {data: 'nohp', name:'nohp'},
 		                            {data: 'action', name:'action', orderable: false, searchable:false},
 		                        ]
 		                    });
-		function addPengurus(){
-		            save_method = "add4";
+		function addbilal(){
+		            save_method = "add5";
 		            $('input[name=_method]').val('POST');
-		            $('#pengurus-form').modal('show');
-		            $('#pengurus-form form')[0].reset();
-		            $('#modal-title').text('Add Pengurus Rumah Ibadah');
+		            $('#bilal-form').modal('show');
+		            $('#bilal-form form')[0].reset();
+		            $('#modal-title').text('Add Nama Bilal Jenazah');
 		        }
-		function deletePengurus(id){
+		function deletebilal(id){
 		          var popup = confirm('Anda yakin ?');
 		          var csrf_token = $('meta[name="csrf-token"]').attr('content');
 		          if(popup == true){
 		            $.ajax({
-		              url: "{{ url('pengurus') }}" + '/' + id,
+		              url: "{{ url('bilal') }}" + '/' + id,
 		              type: "POST",
 		              data: {'_method' : 'DELETE', '_token':csrf_token},
 		              success: function(data){
-		                pengurus.ajax.reload();
+		                bilal.ajax.reload();
 		                console.log(data);
 		              },
 
@@ -46,26 +45,26 @@
 		          }
 		        }
 
-		function editPengurus(id){
+
+		function editbilal(id){
 				            save_method = 'edit';
 				            $('input[name=_method]').val('PATCH');
-				            $('#pengurus-form form')[0].reset();
+				            $('#bilal-form form')[0].reset();
 				            $.ajax({
-				                url: "{{ url('pengurus') }}" + '/' + id + "/edit",
+				                url: "{{ url('bilal') }}" + '/' + id + "/edit",
 				                type: "GET",
 				                dataType: "JSON",
 				                success: function(data){
-				                    $('#pengurus-form').modal('show');
-				                    $('.modal-title').text('Edit Pengurus Rumah Ibadah');
+				                    $('#bilal-form').modal('show');
+				                    $('.modal-title').text('Edit Nama Bilal Jenazah');
 
 				                    $('#id').val(data.id);
-				                    $('#nama').val(data.nama);
+				                    $('#namabilal').val(data.namabilal);
 				                    $('#nik').val(data.nik);
 				                    $('#jkelamin').val(data.jkelamin);
 				                    $('#ttl').val(data.ttl);
-				                    $('#alamat').val(data.alamat);
-				                    $('#namatempatibadah').val(data.namatempatibadah);
-				                    $('#alamattempatibadah').val(data.alamattempatibadah);
+				                    $('#alamatbilal').val(data.alamatbilal);
+				                    $('#lokasitugas').val(data.lokasitugas);
 				                    $('#norekbanksumut').val(data.norekbanksumut);
 				                    $('#kantorcbgbanksumut').val(data.kantorcbgbanksumut);
 				                    $('#nohp').val(data.nohp);
@@ -77,20 +76,21 @@
 				            });
 				        }
 
+
 		$(function(){
-		            $('#pengurus-form form').validator().on('submit', function (e) {
+		            $('#bilal-form form').validator().on('submit', function (e) {
 		                if (!e.isDefaultPrevented()){
 		                    var id = $('#id').val();
-		                    if (save_method == 'add4') url ="{{ url('pengurus') }}";
+		                    if (save_method == 'add5') url ="{{ url('bilal') }}";
 		                    else
-		                        url = "{{ url('pengurus') . '/' }}" + id;
+		                        url = "{{ url('bilal') . '/' }}" + id;
 		                    
 		                    $.ajax({
 		                        url : url,
 		                        type : "POST",
-		                        data : $('#pengurus-form form').serialize(),
+		                        data : $('#bilal-form form').serialize(),
 		                        success : function($data){
-		                            $('#pengurus-form').modal('hide');
+		                            $('#bilal-form').modal('hide');
 		                        },
 		                        error : function(){
 		                            alert('Opps! Error!');
@@ -101,4 +101,5 @@
 		            });
 
 		        });
+
 </script>

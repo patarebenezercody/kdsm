@@ -1,4 +1,4 @@
-<div class="modal" id="modal-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="uraian-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<form method="POST" class="form-horizontal" data-toggle="validator">
@@ -12,49 +12,57 @@
 
 					<input type="hidden" id="id" name="id">
 					<div class="form-group">
-						<label for="namaanak" class="col-md-3 control-label">Nama Anak</label>
+						<label for="nama" class="col-md-3 control-label">Nama</label>
 						<div class="col-md-6">
-							<input type="text" id="namaanak" name="namaanak" class="form-control"  required autofocus>
+							<input type="text" id="nama" name="nama" class="form-control"  required autofocus>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="ttl" class="col-md-3 control-label">Tempat/Tanggal Lahir</label>
+						<label for="instansi" class="col-md-3 control-label">Instansi / Perusahaan</label>
 						<div class="col-md-6">
-							<input type="text" id="ttl" name="ttl" class="form-control" required>
+							<input type="text" id="instansi" name="instansi" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="umur" class="col-md-3 control-label">Umur</label>
+						<label for="alamat" class="col-md-3 control-label">Alamat</label>
 						<div class="col-md-6">
-							<input type="text" id="umur" name="umur" class="form-control" required>
+							<input type="text" id="alamat" name="alamat" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="jkelamin" class="col-md-3 control-label">Jenis Kelamin</label>
+						<label for="nohp" class="col-md-3 control-label">Tlp/HP</label>
 						<div class="col-md-6">
-							<input type="text" id="jkelamin" name="jkelamin" class="form-control" required>
+							<input type="text" id="nohp" name="nohp" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="namaorangtua" class="col-md-3 control-label">Nama Orang Tua</label>
+						<label for="satuan" class="col-md-3 control-label">Satuan</label>
 						<div class="col-md-6">
-							<input type="text" id="namaorangtua" name="namaorangtua" class="form-control" required>
+							<input type="text" id="satuan" name="satuan" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="nokk" class="col-md-3 control-label">NO KK</label>
+						<label for="jenisdonasi" class="col-md-3 control-label">Jenis Donasi</label>
 						<div class="col-md-6">
-							<input type="text" id="nokk" name="nokk" class="form-control" required>
+							<input type="text" id="jenisdonasi" name="jenisdonasi" class="form-control" required>
+							<span class="help-block with-errors"></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="perkiraannilai" class="col-md-3 control-label">Perkiraan Nilai (RP)</label>
+						<div class="col-md-6">
+							<input type="text" id="perkiraannilai" name="perkiraannilai" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>

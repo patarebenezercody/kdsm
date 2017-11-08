@@ -1,13 +1,18 @@
-<script type="text/javascript">
-			var ibuhamil = $('#ibuhamil-table').DataTable({
+s<script type="text/javascript">
+			var ibuhamil = $('#ibu-table').DataTable({
 		                        processing: true,
 		                        serverSide: true,
 		                        ajax: "{{ route('api/ibuhamil') }}",
 		                        columns: [
 		                            {data: 'id', name:'id'},
+		                            {data: 'nokk', name:'nokk'},
 		                            {data: 'namaibuhamil', name:'namaibuhamil'},
+		                            {data: 'umur', name:'umur'},
+		                            {data: 'alamat', name:'alamat'},
 		                            {data: 'namasuami', name:'namasuami'},
-		                            // {data: 'umur', name:'umur'},
+		                            {data: 'jlhanak', name:'jlhanak'},
+		                            {data: 'pekerjaan', name:'pekerjaan'},
+		                            {data: 'keterangan', name:'keterangan'},
 		                            {data: 'action', name:'action', orderable: false, searchable:false},
 		                        ]
 		                    });
@@ -17,7 +22,7 @@
 		            $('input[name=_method]').val('POST');
 		            $('#ibu-form').modal('show');
 		            $('#ibu-form form')[0].reset();
-		            $('#modal-title').text('Add Ibu Hamil');
+		            $('#modal-title').text('Add Nama Ibu Hamil');
 		        }
 
 
@@ -56,7 +61,12 @@
 		                    $('#id').val(data.id);
 		                    $('#nokk').val(data.nokk);
 		                    $('#namaibuhamil').val(data.namaibuhamil);
-		                    // $('#umur').val(data.umur);
+		                    $('#umur').val(data.umur);
+		                    $('#alamat').val(data.alamat);
+		                    $('#namasuami').val(data.namasuami);
+		                    $('#jlhanak').val(data.jlhanak);
+		                    $('#pekerjaan').val(data.pekerjaan);
+		                    $('#keterangan').val(data.keterangan);
 		                },
 
 		                error : function(){

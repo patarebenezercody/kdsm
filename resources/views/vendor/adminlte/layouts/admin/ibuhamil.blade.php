@@ -1,5 +1,4 @@
 
-                @include('formAdmin.formibuhamil');
 	
 	<div class="container-fluid spark-screen">
 		<div class="row">
@@ -21,14 +20,19 @@
 					</div>
 					
 					<div class="box-body">
-					<table id="ibuhamil-table" class="table table-striped">
+					<table id="ibu-table" class="table table-striped">
                 		<thead>
 		                  <tr>
 		                    <th>Id</th>
-		                    
+		                    <th>NO KK</th>
 		                    <th>Nama Ibu Hamil</th>
 		                    <th>Nama Suami</th>
-		                    <!-- <th>Umur</th> -->
+		                    <th>Umur</th>
+		                    <th>Alamat</th>
+		                    <th>Nama Suami</th>
+		                    <th>Jumlah Anak</th>
+		                    <th>Pekerjaan</th>
+		                    <th>Keterangan</th>
 		                    <th>Action</th>
 		                  </tr>
 		                </thead>
@@ -37,6 +41,7 @@
 				</div>
 			</div>
 		</div>
+                @include('formAdmin.formibuhamil');
 
 
 	</div>
