@@ -26,7 +26,7 @@ s<script type="text/javascript">
 		        }
 
 
-		function deleteIbuHamil(id){
+		function deleteIbu(id){
 		          var popup = confirm('Anda yakin ?');
 		          var csrf_token = $('meta[name="csrf-token"]').attr('content');
 		          if(popup == true){
@@ -46,7 +46,7 @@ s<script type="text/javascript">
 		          }
 		        }
 
-		function editIbuHamil(id){
+		function editIbu(id){
 		            save_method = 'edit';
 		            $('input[name=_method]').val('PATCH');
 		            $('#ibu-form form')[0].reset();
@@ -58,10 +58,10 @@ s<script type="text/javascript">
 		                    $('#ibu-form').modal('show');
 		                    $('.modal-title').text('Edit Ibu Hamil');
 
-		                    $('#id').val(data.id);
+		                    $('#umur').val(data.umur);
+		                    // $('#id').val(data.id);
 		                    $('#nokk').val(data.nokk);
 		                    $('#namaibuhamil').val(data.namaibuhamil);
-		                    $('#umur').val(data.umur);
 		                    $('#alamat').val(data.alamat);
 		                    $('#namasuami').val(data.namasuami);
 		                    $('#jlhanak').val(data.jlhanak);
@@ -99,4 +99,5 @@ s<script type="text/javascript">
 		            });
 
 		        });
+		
 </script>

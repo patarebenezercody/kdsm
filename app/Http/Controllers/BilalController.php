@@ -13,7 +13,7 @@ class BilalController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('bilal');
         
     }
 
@@ -114,8 +114,8 @@ class BilalController extends Controller
         $b = Bilal::all();
         return DataTables::of($b)
         ->addColumn('action', function($b){
-            return '<a onclick = "editbilal('. $b->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deletebilal('. $b->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editbilal('. $b->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deletebilal('. $b->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

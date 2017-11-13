@@ -1,5 +1,5 @@
 <!-- Main Footer -->
-<footer class="main-footer">
+<footer class="main-footer navbar-fixed-bottom">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
        <b>Developed by: </b> <a href="#">Patar Ebenezer Siahaan</a>

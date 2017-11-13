@@ -1,6 +1,6 @@
 <!-- Main Header -->
 <header class="main-header">
-
+    <div class="navbar-fixed-top">
     <!-- Logo -->
     <a href="{{ url('/home') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -8,9 +8,9 @@
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Kelurahan</b>KDSM </span>
     </a>
-
+    </div>
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation">
         <!-- Sidebar toggle button-->
         
         <div class="navbar-custom-menu">

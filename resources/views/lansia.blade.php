@@ -48,7 +48,7 @@ desired effect
 
     @include('adminlte::layouts.partials.mainheader')
 
-    @include('adminlte::layouts.partials.sidebar')
+    @include('adminlte::layouts.partials.sidelansia')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -58,13 +58,7 @@ desired effect
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
-            @include('adminlte::layouts.admin.balita')
-            @include('adminlte::layouts.admin.ibuhamil')
-            @include('adminlte::layouts.admin.pengurus')
-            @include('adminlte::layouts.admin.partisipasi')
-            @include('adminlte::layouts.admin.uraianpribadi')
             @include('adminlte::layouts.admin.lansia')
-            @include('adminlte::layouts.admin.bilal')
 
 
             
@@ -86,7 +80,7 @@ desired effect
 
     <script src="{{ asset('assets/jquery/jquery-1.12.4.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-    
+
     {{-- dataTables --}}
     <script src="{{ asset('assets/dataTables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/dataTables/js/dataTables.bootstrap.min.js') }}"></script>
@@ -95,13 +89,7 @@ desired effect
     <script src="{{ asset('assets/validator/validator.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/js/ie10-viewport-bug-workaround.js') }}"></script>
 
-    @include('adminlte::JS.jsbilal')
-    @include('adminlte::JS.jsbalita')
-    @include('adminlte::JS.jsibu')
     @include('adminlte::JS.jslansia')
-    @include('adminlte::JS.jspengurus')
-    @include('adminlte::JS.jspartisipasi')
-    @include('adminlte::JS.jsuraian')
 
 
 

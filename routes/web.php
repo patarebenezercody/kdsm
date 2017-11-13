@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('pdf', function(){
+   $pdf = PDF::loadView('pdf');
+   return $pdf->download('bilal.pdf');
+});
 Route::group(['middleware' => 'auth'], function () {
    Route::resource('balita', 'balitaController');
    Route::get('api/balita', 'balitaController@apiBalita')->name('api/balita');
@@ -36,4 +40,5 @@ Route::group(['middleware' => 'auth'], function () {
 
    Route::resource('bilal', 'BilalController');
    Route::get('api/bilal', 'BilalController@apiBilal')->name('api/bilal');
-});
+
+});   

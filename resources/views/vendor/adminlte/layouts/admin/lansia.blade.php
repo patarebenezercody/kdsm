@@ -1,8 +1,7 @@
-                @include('formAdmin.formlansia');
 
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-lg-13">
 
 				<!-- Default box -->
 				<div class="box">
@@ -10,16 +9,12 @@
 						<h3 class="box-title">
 							Daftar LANSIA Kelurahan Darat Kecamatan Medan Baru PER OKTOBER Tahun 2017
 						</h3>
-						<a onclick="addlansia()" class="btn btn-primary pull-right" style="margin-right: 50px">Add</a>
-						<div class="box-tools pull-right">
-							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-								<i class="fa fa-minus"></i></button>
-							<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-								<i class="fa fa-times"></i></button>
-						</div>
+						<a onclick="addlansia()" class="btn btn-warning pull-right pull-right glyphicon glyphicon-plus"></a>
+						
 					</div>
 					
 					<div class="box-body">
+					<div class="table-responsive">
 					<table id="lansia-table" class="table table-striped">
                 		<thead>
 		                  <tr>
@@ -36,9 +31,11 @@
 		                  </tr>
 		                </thead>
 			        </table>
+			    </div>
 					</div>
 				</div>
 			</div>
 		</div>
+                @include('formAdmin.formlansia')
 
 	</div>

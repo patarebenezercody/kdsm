@@ -26,7 +26,7 @@
             <li class="header">{{ trans('MENU') }}</li>
 
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-data'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li><a href="{{ url('home') }}"><i class='fa fa-data'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
 
             <li><a href="{{ url('balita') }}"><i class='fa fa-data'></i> <span>{{ trans('Balita') }}</span></a></li>
 
@@ -34,7 +34,7 @@
 
             <li><a href="{{ url('ibuhamil') }}"><i class='fa fa-data'></i> <span>{{ trans('Ibu Hamil') }}</span></a></li>
 
-            <li><a href="{{ url('pengurus') }}"><i class='fa fa-data'></i> <span>{{ trans('Pengurus') }}</span></a></li>
+            <li class="active"><a href="{{ url('pengurus') }}"><i class='fa fa-data'></i> <span>{{ trans('Pengurus') }}</span></a></li>
 
             <li><a href="{{ url('partisipasi') }}"><i class='fa fa-data'></i> <span>{{ trans('Partisipasi') }}</span></a></li>
 

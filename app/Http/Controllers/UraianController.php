@@ -15,7 +15,7 @@ class UraianController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('uraian');
         
     }
 
@@ -112,8 +112,8 @@ class UraianController extends Controller
         $u = Uraian::all();
         return DataTables::of($u)
         ->addColumn('action', function($u){
-            return '<a onclick = "edituraian('. $u->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteuraian('. $u->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "edituraian('. $u->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deleteuraian('. $u->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

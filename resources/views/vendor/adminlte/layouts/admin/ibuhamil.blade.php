@@ -1,8 +1,7 @@
 
-	
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-lg-13">
 
 				<!-- Default box -->
 				<div class="box">
@@ -10,23 +9,18 @@
 						<h3 class="box-title">
 							Daftar Ibu Hamil Kelurahan Darat Kecamatan Medan Baru Tahun 2017
 						</h3>
-						<a onclick="addIbuHamil()" class="btn btn-primary pull-right" style="margin-right: 50px">Add</a>
-						<div class="box-tools pull-right">
-							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-								<i class="fa fa-minus"></i></button>
-							<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-								<i class="fa fa-times"></i></button>
-						</div>
+						<a onclick="addIbuHamil()" class="btn btn-warning pull-right pull-right glyphicon glyphicon-plus"></a>
+						
 					</div>
 					
 					<div class="box-body">
+					<div class="table-responsive">
 					<table id="ibu-table" class="table table-striped">
                 		<thead>
 		                  <tr>
 		                    <th>Id</th>
 		                    <th>NO KK</th>
 		                    <th>Nama Ibu Hamil</th>
-		                    <th>Nama Suami</th>
 		                    <th>Umur</th>
 		                    <th>Alamat</th>
 		                    <th>Nama Suami</th>
@@ -37,11 +31,12 @@
 		                  </tr>
 		                </thead>
 			        </table>
+			    </div>
 					</div>
 				</div>
 			</div>
 		</div>
-                @include('formAdmin.formibuhamil');
+                @include('formAdmin.formibuhamil')
 
 
 	</div>

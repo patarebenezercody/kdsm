@@ -1,6 +1,5 @@
 <script type="text/javascript">
-			
-			var bilal = $('#bilal-table').DataTable({
+			var bilal = $('#bilal-table').DataTables({
 		                        processing: true,
 		                        serverSide: true,
 		                        ajax: "{{ route('api/bilal') }}",

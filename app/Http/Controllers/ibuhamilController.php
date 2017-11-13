@@ -15,7 +15,7 @@ class ibuhamilController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('ibu');
     
     }
 
@@ -70,7 +70,7 @@ class ibuhamilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+     public function edit($id)
     {
         $ibuhamil = DIHamil::find($id);
         return $ibuhamil;
@@ -115,8 +115,8 @@ class ibuhamilController extends Controller
         $ibuhamil = DIHamil::all();
         return DataTables::of($ibuhamil)
         ->addColumn('action', function($ibuhamil){
-            return '<a onclick = "editIbuHamil('. $ibuhamil->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteIbuHamil('. $ibuhamil->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editIbu('. $ibuhamil->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deleteIbu('. $ibuhamil->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

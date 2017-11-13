@@ -1,5 +1,6 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
+	<br><br>
     <h1>
         
         @yield('contentheader_title', 'Selamat Datang, ' ) <b><a href="#">{{ Auth::user()->name }}</a></b>

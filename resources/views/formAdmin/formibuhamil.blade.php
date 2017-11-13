@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<label for="nokk" class="col-md-3 control-label">NO KK</label>
 						<div class="col-md-6">
-							<input type="text" id="nokk" name="nokk" class="form-control" required autofocus>
+							<input type="text" id="nokk" name="nokk" class="form-control" required>
 							<span class="help-block with-errors"></span>
 						</div>
 					</div>

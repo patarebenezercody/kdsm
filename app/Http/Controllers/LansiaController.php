@@ -15,7 +15,7 @@ class LansiaController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('lansia');
         
     }
 
@@ -115,8 +115,8 @@ class LansiaController extends Controller
         $lansia = Lansia::all();
         return DataTables::of($lansia)
         ->addColumn('action', function($lansia){
-            return '<a onclick = "editlansia('. $lansia->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deletelansia('. $lansia->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editlansia('. $lansia->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deletelansia('. $lansia->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

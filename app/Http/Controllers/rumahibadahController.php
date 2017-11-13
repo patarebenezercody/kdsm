@@ -15,7 +15,7 @@ class rumahibadahController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('pengurus');
         
     }
 
@@ -120,8 +120,8 @@ class rumahibadahController extends Controller
         $pengurus = Pengurus::all();
         return DataTables::of($pengurus)
         ->addColumn('action', function($pengurus){
-            return '<a onclick = "editPengurus('. $pengurus->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deletePengurus('. $pengurus->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editPengurus('. $pengurus->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deletePengurus('. $pengurus->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

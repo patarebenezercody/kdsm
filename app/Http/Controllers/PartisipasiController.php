@@ -15,7 +15,7 @@ class PartisipasiController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('partisipasi');
     }
 
     /**
@@ -105,8 +105,8 @@ class PartisipasiController extends Controller
         $partisipasi = Partisipasi::all();
         return DataTables::of($partisipasi)
         ->addColumn('action', function($partisipasi){
-            return '<a onclick = "editpartisipasi('. $partisipasi->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deletepartisipasi('. $partisipasi->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editpartisipasi('. $partisipasi->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deletepartisipasi('. $partisipasi->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

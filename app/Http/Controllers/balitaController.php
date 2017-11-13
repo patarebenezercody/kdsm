@@ -15,7 +15,7 @@ class balitaController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('balita');
     }
 
     /**
@@ -110,8 +110,8 @@ class balitaController extends Controller
         $balita = DBalitaPuskes::all();
         return DataTables::of($balita)
         ->addColumn('action', function($balita){
-            return '<a onclick = "editBalita('. $balita->id .')" class="btn btn-primary"></i>Edit</a> ' .
-            ' <a onclick = "deleteBalita('. $balita->id .')" class="btn btn-danger"></i>Delete</a>';
+            return '<a onclick = "editBalita('. $balita->id .')" class="btn btn-primary glyphicon glyphicon-pencil"></i></a> ' .
+            ' <a onclick = "deleteBalita('. $balita->id .')" class="btn btn-danger glyphicon glyphicon-remove"></i></a>';
         })->make(true);
     }
 }

@@ -243,6 +243,8 @@ if (typeof jQuery === 'undefined') {
       this.$element.toggleClass('active')
     }
   }
+  
+});
 
 
   // BUTTON PLUGIN DEFINITION
